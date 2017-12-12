@@ -1,0 +1,180 @@
+/*时间参数模块外框*/
+.time-content{
+    width:1280px;
+    margin:0 auto;
+    margin-top:15px;
+}
+.timetable-txt{
+    padding-left:50px;
+    overflow:hidden;
+}
+.timetable-txt>li{
+    float:left;
+    height:50px;
+    line-height:40px;
+    font-size: 18px;
+    color: #000;
+    margin-right:40px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.timetable-txt>.time-table-crt{
+    color:#D37F10;
+}
+.timetable-box{
+    width:96%;
+    margin:0 auto;
+    background: #D8D8D8;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    position:relative;
+    min-height:452px;
+    max-height:800px;
+}
+.timetable-box>div{
+    width:100%;
+    height:100%;
+    padding-top:25px;
+}
+/*时间表格*/
+/*设备列表*/
+.all-timetable-box{
+    margin:0 auto;
+    width:94%;
+    vertical-align:middle;
+    text-align:center;
+}
+.all-timetable-box thead th{
+    height:45px;
+    border:1px solid #ccc;
+    background: #565555;
+    color: #fff;
+    position:relative;
+}
+.all-timetable-box tbody td{
+    height:40px;
+    color: #232323;
+    border:1px solid #ccc;
+    position:relative;
+    word-wrap: break-word;
+    word-break : break-all;
+}
+.box-choose{
+    display:block;
+    width:15px;
+    height:15px;
+    background:url(../img/box-choose.png) no-repeat;
+    cursor:pointer;
+    margin:0 auto;
+}
+.riqi-table th:nth-child(1),.gzr-table th:nth-child(1){
+    width:4%
+}
+.riqi-table th:nth-child(2),.gzr-table th:nth-child(2){
+    width:5%
+}
+.riqi-table th:nth-child(3),.gzr-table th:nth-child(3){
+    width:25%
+}
+.riqi-table th:nth-child(4),.riqi-table th:nth-child(5),.riqi-table th:nth-child(6),.gzr-table th:nth-child(5){
+    width:14%
+}
+.riqi-table th:nth-child(7),.riqi-table th:nth-child(8),.gzr-table th:nth-child(6),.gzr-table th:nth-child(7){
+    width:12%
+}
+.gzr-table th:nth-child(4){
+    width:28%;
+ }
+.riqi-table th:nth-child(9),.gzr-table th:nth-child(8),.riqi-table td:nth-child(9),.gzr-table td:nth-child(8){
+    display:none;
+}
+
+/*是否--下拉框*/
+
+.select-no{
+    width:44px;
+    height:22px;
+    background:url(../img/no-pic.png) no-repeat center;
+    background-size:100%;
+    cursor:pointer;
+    margin:0 auto;
+}
+.select-no.select-yes {
+    background:url(../img/yes-pic.png) no-repeat center;
+    background-size:100%;
+}
+
+
+/*编辑删除按钮*/
+
+.edit-btn,.delete-btn{
+    display:inline-block;
+    width:21px;
+    height:20px;
+    vertical-align:middle;
+    background:url(../img/edit-btn.png) no-repeat;
+    cursor:pointer;
+}
+.delete-btn{
+    background:url(../img/delete-btn.png) no-repeat;
+    margin-left:18.5px;
+}
+.all-timetable-box tbody tr:nth-child(odd){
+    background: #FFF;
+}
+.all-timetable-box tbody tr:nth-child(even){
+    background: #EFEFEF;
+}
+
+
+
+/*按钮*/
+.all-timetable-btns{
+    position:absolute;
+    bottom:29px;
+    left:38px;
+}
+.all-timetable-btns>button{
+    margin-right:12px;
+    letter-spacing: 2.9px;
+}
+/*交互*/
+.tr-choosed-avtive{
+    background:#FDFBE0!important
+}
+.box-chooose-active {
+    background: url(../img/box-choosed.png) no-repeat;
+}
+
+.gztable{
+    margin-top:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

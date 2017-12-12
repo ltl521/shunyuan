@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div id="login-container">
+    <!--logo-->
+    <div class="login-top">
+        <dl>
+            <dt></dt>
+            <dd>总部大楼智能控制系统</dd>
+        </dl>
+    </div>
+    <!--登录表单-->
+    <div class="login-bottom">
+        <form class="login-form" action="">
+            <label for="uname">账户：</label>
+            <input type="text" id="uname">
+            <label class="label2" for="pwd">密码：</label>
+            <input type="password" id="pwd">
+            <button type="button" id="btn">登录</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $("#btn").on("click",function(){
+        var username=$("#uname").val();
+        var pwd=$("#pwd").val();
+        if(!username){
+            alert("请填写用户名")
+        }else{
+            if(!pwd){
+                alert("请填写密码")
+            }else{
+                location.href="device-control.html";
+            }
+        }
+    })
+</script>
+</html>

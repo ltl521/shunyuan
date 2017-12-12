@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间参数</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/time-parameter.css">
+</head>
+<body>
+<div id="device-container">
+    <div class="header">
+        <!--logo&用户-->
+        <div>
+            <div>
+                <img src="img/moorgen-logo.png" alt="">
+                <div class="user-info">
+                    <p class="exit">退出</p>
+                    <p class="uname">登录账号：<span>管理员1</span></p>
+                    <p class="time">2017-07-24 13:29</p>
+                </div>
+            </div>
+        </div>
+        <!--导航条-->
+        <div>
+            <div>
+                <ul class="nav-list">
+                    <li id="control"><span class="nav-list-crt">设备控制</span></li>
+                    <li id="management"><span class="nav-list-mgt">设备管理</span></li>
+                    <li id="timeParam" class="nav-current"><span class="nav-list-time-active">时间参数</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="time-content">
+        <ul class="timetable-txt">
+            <li class="time-table-crt" title="riqi">日期时间表</li>
+            <li title="gztime">工作日时间表</li>
+        </ul>
+        <div class="timetable-box">
+            <div id="riqi">
+                <table class="all-timetable-box riqi-table">
+                    <thead>
+                    <tr>
+                        <th><span  class="box-choose"></span></th>
+                        <th class="box-nb">序号</th>
+                        <th class="all-timetable-name">名称</th>
+                        <th class="all-timetable-sd">开始日期</th>
+                        <th class="all-timetable-ed">结束日期</th>
+                        <th class="all-timetable-tp">时间点</th>
+                        <th class="all-timetable-open">是否启用</th>
+                        <th class="all-timetable-edit">操作</th>
+                        <th>标识</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span  class="box-choose"></span></td>
+                        <td class="rq-table-num">1</td>
+                        <td class="rq-table-name">一楼南面窗帘夏季9:00时间表</td>
+                        <td class="rq-table-startdate">2017-05-31</td>
+                        <td class="rq-table-startdate">2017-09-30</td>
+                        <td class="ri-table-hour">9:00</td>
+                        <td>
+                            <div class="select-no"></div>
+                        </td>
+                        <td>
+                            <span class="edit-btn"></span>
+                            <span class="delete-btn"></span>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><span  class="box-choose"></span></td>
+                        <td class="rq-table-num">1</td>
+                        <td class="rq-table-name">一楼南面窗帘夏季9:00时间表</td>
+                        <td class="rq-table-startdate">2017-05-31</td>
+                        <td class="rq-table-startdate">2017-09-30</td>
+                        <td class="ri-table-hour">9:00</td>
+                        <td>
+                            <div class="select-no"></div>
+                        </td>
+                        <td>
+                            <span class="edit-btn"></span>
+                            <span class="delete-btn"></span>
+                        </td>
+                        <td>2</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div  class="page_div page"></div>
+                <div class="all-timetable-btns">
+                    <button class="time-batch-btns new-time"  type="button">新建时间表</button>
+                    <button class="time-batch-btns del" type="button">批量删除</button>
+                    <button class="time-batch-btns zx" type="button">批量执行</button>
+                    <button class="time-batch-btns tz" type="button">批量停止</button>
+                </div>
+            </div>
+            <div id="gztime"style="display:none">
+                <table class="all-timetable-box gzr-table">
+                    <thead>
+                    <tr>
+                        <th><span  class="box-choose"></span></th>
+                        <th class="box-nb">序号</th>
+                        <th class="all-timetable-name">名称</th>
+                        <th class="all-timetable-sd">日期</th>
+                        <th class="all-timetable-tp">时间点</th>
+                        <th class="all-timetable-open">是否启用</th>
+                        <th class="all-timetable-edit">操作</th>
+                        <th>标识</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span  class="box-choose"></span></td>
+                        <td class="gzr-table-num">1</td>
+                        <td class="gzr-table-name">一楼南面窗帘夏季9:00时间表</td>
+                        <td class="gzr-table-date">周一 周二 周三</td>
+                        <td class="gzr-table-hour">9:00</td>
+                        <td>
+                            <div class="select-no"></div>
+                        </td>
+                        <td>
+                            <span class="edit-btn"></span>
+                            <span class="delete-btn"></span>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><span  class="box-choose"></span></td>
+                        <td class="gzr-table-num">1</td>
+                        <td class="gzr-table-name">一楼南面窗帘夏季9:00时间表</td>
+                        <td class="gzr-table-date">周一 周二 周三</td>
+                        <td class="gzr-table-hour">9:00</td>
+                        <td>
+                            <div class="select-no"></div>
+                        </td>
+                        <td>
+                            <span class="edit-btn"></span>
+                            <span class="delete-btn"></span>
+                        </td>
+                        <td>2</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div  class="page_div page"></div>
+                <div class="all-timetable-btns">
+                    <button class="time-batch-btns new-time" type="button">新建时间表</button>
+                    <button class="time-batch-btns del" type="button">批量删除</button>
+                    <button class="time-batch-btns zx" type="button">批量执行</button>
+                    <button class="time-batch-btns tz" type="button">批量停止</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/paging.js"></script>
+<script src="js/time-parameter.js"></script>
+</html>

@@ -1,0 +1,491 @@
+body{
+    min-width:1280px;
+}
+/*时间参数模块外框*/
+.time-content{
+    width:1280px;
+    margin:0 auto;
+    margin-top:30px;
+}
+/*新建时间表*/
+.time-content>h4{
+    width:100%;
+    border-bottom:1px solid #ccc;
+    font-size: 16px;
+    color: #000;
+    padding-bottom:10px;
+    font-weight:normal;
+}
+/*时间选择项*/
+.time-header{
+    margin-top:23px;
+    height:38px;
+    margin-left:15px;
+}
+/*按日期创建*/
+.choose-date,.choose-date li{
+    margin-left:30px;
+}
+.time-header>li{
+    float:left;
+    height:38px;
+    line-height:38px;
+    font-size: 18px;
+    color: #232323;
+}
+.time-header>li:first-child{
+    margin-left:0;
+}
+.time-header li>p{
+    line-height:32px;
+}
+.time-header li>div{
+    float:left;
+    width:200px;
+    height:38px;
+    line-height:38px;
+    margin-left:17px;
+    background: #fff;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #232323;
+    cursor:pointer;
+}
+.time-header li>div>input{
+    cursor:pointer;
+}
+.time-header li>div>span{
+    float:right;
+    cursor:pointer;
+    margin-right:11px;
+}
+/*时间类型下拉框*/
+#time-type-sel{
+    width:200px;
+    height:38px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin-left:15px;
+    padding-left:10px;
+    cursor:pointer;
+}
+
+/*日历图标*/
+.calendar{
+    width:18px;
+    height:18px;
+    background:url(../img/calendar.png) no-repeat;
+    margin-top:10px;
+}
+
+
+/*按工作时间下的循环日期*/
+
+.time-header li>div.cycle-date{
+    width:524px;
+    position:relative;
+}
+.cycle-date>p{
+    padding-left:10px;
+}
+.cycle-date>span{
+    float:right;
+    width:30px;
+    height:38px;
+    background:url(../img/drop-down.png) no-repeat center;
+}
+.drop-workday{
+    position:absolute;
+    top:32px;
+    left:305px;
+    z-index:999999999;
+    width:179px;
+    height:269px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 28px 0 rgba(0,0,0,0.32);
+    padding-top:15px;
+    display:none;
+}
+.drop-workday>li{
+    width:100px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+}
+.drop-workday>li>span{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background: url(../img/box-choose.png) no-repeat center;
+    margin-right:15px;
+}
+.drop-workday>li>span.workday-active{
+    background: url(../img/box-choosed.png) no-repeat center;
+}
+.time-point{
+    padding-left:10px;
+}
+
+
+/*设备操作*/
+.time-devices{
+    width:100%;
+    overflow:hidden;
+}
+/*选择设备*/
+.choose-device,.device-config{
+    width:240px;
+    height:493px;
+    background: #D8D8D8;
+    border-radius: 4px;
+    /*margin-right:20px;*/
+    margin-top:26px;
+    overflow: auto;
+}
+.time-device-title{
+    width:198px;
+    height:43px;
+    line-height:43px;
+    margin:0 auto;
+    border-bottom:1px solid #979797;
+    font-size: 18px;
+    color: #000;
+    font-weight:normal;
+}
+/*.choose-device>.list{
+    height:450px;
+    overflow:auto;
+}*/
+
+/*已选中设备*/
+.choosed-device{
+    height:493px;
+    margin-left:260px;
+    margin-right:260px;
+    border: 1px solid #CCCCCC;
+    position:relative;
+    background: #D8D8D8;
+    border-radius: 4px;
+    margin-top:26px;
+}
+.choosed-device>h3{
+    width:95%;
+}
+/*设备列表*/
+.device-box{
+    margin:25px auto 0 auto;
+    width:90%;
+    font-size: 14px;
+    vertical-align:middle;
+    text-align:center;
+}
+.device-box thead th{
+    height:45px;
+    border:1px solid #CCCCCC;
+    background: #565555;
+    color: #FFFFFF;
+    position:relative;
+}
+
+.device-box tbody td{
+    height:40px;
+    color: #232323;
+    border:1px solid #CCCCCC;
+    position:relative;
+    word-wrap: break-word;
+    word-break : break-all;
+}
+.box-choose{
+    display:block;
+    width:15px;
+    height:15px;
+    background:url(../img/box-choose.png) no-repeat;
+    cursor:pointer;
+    margin:0 auto;
+}
+.box-chooose-active{
+    background:url(../img/box-choosed.png) no-repeat;
+}
+.device-box thead th:nth-child(1){
+    width:10%;
+}
+.device-box thead th:nth-child(2),.device-box thead th:nth-child(5){
+    width:12%;
+}
+
+.device-box thead th:nth-child(3),.device-box thead th:nth-child(4){
+    width:33%;
+}
+
+/*编辑单元格中的删除按钮*/
+.delete-btn{
+    display:inline-block;
+    width:21px;
+    height:20px;
+    vertical-align:middle;
+    background:url(../img/delete-btn.png) no-repeat;
+    cursor:pointer;
+}
+/*表格隔行变色*/
+.device-box tbody tr:nth-child(odd){
+    background: #FFF;
+}
+.device-box tbody tr:nth-child(even){
+    background: #EFEFEF;
+}
+
+.tr-choosed-avtive{
+    background: #FDFBE0!important;
+}
+
+
+/*批量删除按钮*/
+.time-batch-del{
+    position:absolute;
+    bottom:15px;
+    left:26px;
+}
+
+/*设备配置*/
+/*滑动控制高度说明*/
+.device-config-content{
+    width:100%;
+    padding-top:22px;
+}
+.device-config-content>div{
+    width:160px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.device-config-content>div>p{
+    margin-bottom:36px;
+    font-size: 16px;
+    color: #232323;
+}
+.height-mark{
+    width:68px;
+    height:210px;
+    position:relative;
+    margin-left:15px;
+}
+.height-mark>p{
+    font-size: 10px;
+    color: #9A9B9C;
+    text-align:right;
+    height:14px;
+    line-height:14px;
+}
+.height-80{
+    margin-top:20px;
+}
+.height-50{
+    margin-top:50px;
+}
+.height-30{
+    margin-top:28px;
+}
+.lower-shutter{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+/*输入框*/
+#config-height{
+    display:inline-block;
+    width:125px;
+    height:38px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top:28px;
+    text-align:center;
+    font-size: 16px;
+    color: #232323;
+}
+.device-config-content>div>span{
+    font-size: 18px;
+    color: #232323;
+    margin-left:8px;
+}
+.device-config-content>div>.alert-info{
+    display:none;
+    color:red;
+    margin-top:5px;
+}
+/*滑动控制*/
+.slide-module{
+    position:relative;
+    margin:0 14px;
+    width:14px;
+    height:210px;
+    background:url(../img/scroll-bar.png) no-repeat;
+}
+.slide-ball{
+    width:32px;
+    height:32px;
+    background:url(../img/slide-ball.png) no-repeat;
+    position:absolute;
+    bottom:0px;
+    left:-9px;
+    cursor:pointer;
+}
+
+/*滑块按钮*/
+.start-btn-active{
+    background:url("../img/button1-click.png") no-repeat;
+}
+
+/*设备配置按钮组*/
+.device-config-btns{
+    width:100%;
+    margin:0 auto;
+    padding-top:27px;
+    padding-left:17px;
+}
+.device-config-btns>button{
+    margin-bottom:13px;
+}
+/*时间表信息*/
+.timetable-info{
+    height:40px;
+    line-height:40px;
+    margin-top:45px;
+}
+.timetable-info>div{
+    float:left;
+}
+.timetable-info h4{
+    float:left;
+    font-size: 16px;
+    color: #000;
+    margin-right:28px;
+}
+#timetable-name{
+    display:inline-block;
+    width:373px;
+    height:38px;
+    line-height:38px;
+    padding-left:10px;
+}
+
+/*时间表是否启用下拉框*/
+.timetable-open{
+    width:166px;
+    height:38px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding-left:10px;
+    cursor:pointer;
+}
+
+.preview-btn,.save-btn{
+    width:166px;
+    height:48px;
+    line-height:48px;
+    background:url(../img/floor-plan.png) no-repeat;
+    font-size:14px;
+    color: #FFF;
+    letter-spacing: 5px;
+}
+.preview-btn:hover,.save-btn:hover{
+    background:url(../img/floor-plan-hover.png) no-repeat;
+}
+.save-btn{
+    margin-left:30px;
+}
+
+.timetable-info>div:last-child{
+    width:30%;
+}
+.timetable-info>div:nth-child(2){
+    width:30%
+}
+.timetable-info>div:first-child{
+    width:40%;
+}
+
+
+
+/*时间*/
+.time-header li>div{
+    position: relative;
+}
+#start-time,#end-time,#time-time,#time-time1{
+    background: transparent;
+    border: none;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height:38px;
+    padding-left:10px;
+}
+
+
+/*左侧树菜单*/
+.list{
+    padding-left:21px;
+}
+
+.list ul li a{
+    display: inline-block;
+    width:100%;
+    padding-left:30px;
+    padding-right:20px;
+    margin:1px 0;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 0;
+    height:30px;
+    line-height: 30px;
+    cursor:pointer;
+}
+
+.list ul li .inactive{
+    background: url(../img/on.png) no-repeat 5px center;
+}
+.list ul li .inactives{
+    background: url(../img/off.png) no-repeat 5px center;
+}
+.erji,.sanji{
+    padding-left:28px;
+}
+.sanji>li>a{
+    background: url(../img/off.png) no-repeat 5px center;
+}
+.device-add{
+    float:right;
+    width:15px;
+    height:15px;
+    background:url(../img/box-choose.png) no-repeat;
+    margin-top:7.5px;
+}
+.device-add-active{
+    background:url(../img/box-choosed.png) no-repeat;
+}
+
+/*设备添加按钮*/
+.choose-device{
+    position:relative;
+}
+.choose-device>button{
+    position:absolute;
+    bottom:13px;
+    right:25px;
+    width:76px;
+    height:44px;
+    line-height:44px;
+    font-size:16px;
+    color:#3A85C8;
+    letter-spacing:5px;
+    padding-left:5px;
+    background:url(../img/btn-start.png) no-repeat center;
+}
+.choose-device>button:hover{
+    background:url(../img/btn-start-hover.png) no-repeat center;
+}
+
+
+

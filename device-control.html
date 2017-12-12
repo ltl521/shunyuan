@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设备控制-整栋</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/device-control.css">
+</head>
+<body>
+<div id="device-container">
+    <!--顶部导航栏-->
+    <div class="header">
+        <!--logo&用户-->
+        <div>
+            <div>
+                <img src="img/moorgen-logo.png" alt="">
+                <div class="user-info">
+                    <p class="exit">退出</p>
+                    <p class="uname">登录账号：<span>管理员1</span></p>
+                    <p class="time">2017-07-24 13:29</p>
+                </div>
+            </div>
+        </div>
+        <!--导航条-->
+        <div>
+            <div>
+                <ul class="nav-list">
+                    <li id="control" class="nav-current"><span class="nav-list-crt-active">设备控制</span></li>
+                    <li id="management"><span class="nav-list-mgt">设备管理</span></li>
+                    <li id="timeParam"><span class="nav-list-time">时间参数</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--设备控制主题内容-->
+    <div class="device-content">
+        <!--左侧楼层列表-->
+        <div class="stories left">
+            <ul id="stories-list">
+                <li class="stories-1" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>1F</p>
+                </li>
+                <li class="stories-2" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>2F</p>
+                </li>
+                <li class="stories-3" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>3F</p>
+                </li>
+                <li class="stories-4" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>4F</p>
+                </li>
+                <li class="stories-5" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>5F</p>
+                </li>
+                <li class="stories-6" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>6F</p>
+                </li>
+                <li class="stories-7" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>7F</p>
+                </li>
+                <li class="stories-8" onclick="jumpStories(this)">
+                    <span></span>
+                    <p>整栋</p>
+                </li>
+            </ul>
+        </div>
+
+        <!--右侧控制详情-->
+        <div  class="control-detail left"><!--改-->
+            <!--整栋楼层控制面板-->
+            <div>
+                <!--左侧信息-->
+                <div class="control-left left">
+                    <!--选择楼层图片-->
+                    <div class="ctr-left-top">
+                        <img src="img/building.png" alt="">
+                        <p>整栋</p>
+                    </div>
+                    <!--气象信息-->
+                    <div class="ctr-left-middle">
+                        <ul>
+                            <li class="weather weather-title">
+                                <div class="justify">气象信息<span></span></div><p>：</p>
+                            </li>
+                            <li class="weather">
+                                <div class="justify">光照度<span></span></div>
+                                <p>：<span>100～1000lux</span></p>
+                            </li>
+                            <li class="weather">
+                                <div class="justify">风力<span></span></div>
+                                <p>：<span>3级</span></p>
+                            </li>
+                            <li class="weather">
+                                <div class="justify">雨水<span></span></div>
+                                <p>：<span>100mm</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--高度遮阳介绍-->
+                    <div class="ctr-left-bottom">
+                        <div>
+                            <p><span>全升</span>&nbsp;-&nbsp;全透景</p>
+                            <p><span>离地4m</span>&nbsp;-&nbsp;1F-2F遮阳／完全透景</p>
+                            <p><span>离地2.2m</span>&nbsp;-&nbsp;3F-7F遮阳／完全透景</p>
+                            <p><span>离地1.8m </span>&nbsp;-&nbsp;遮阳／站立时完全透景</p>
+                            <p><span>离地1.2m </span>&nbsp;-&nbsp;遮阳／坐下时完全透景</p>
+                            <p><span>全降 </span>&nbsp;-&nbsp;全遮阳</p>
+                        </div>
+                    </div>
+
+                    <button id="floor-pic-btn" type="button" style="display:none">查看楼层平面图</button>
+                    <div class="floor-plan-popbox">
+                        <div>
+                            <img src="" alt="">
+                            <div class="floor-plan-popbox-close"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--右侧控制面板-->
+                <!--整栋-->
+                <div class="floorI type0" id="i8">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <h4 class="floor">1F-2F控制</h4>
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-4m">4m-</p>
+                                    <p class="tall-18">1.8m-</p>
+                                    <p class="tall-12">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <h4 class="floor">3F-7F控制</h4>
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-22">2.2m-</p>
+                                    <p class="tall-18-2">1.8m-</p>
+                                    <p class="tall-12-2">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整栋控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整栋遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地4m/2.2m</button>
+                                <button type="button" class="build-btn ld1-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld1-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整栋智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+                            <div class="facet-ITC">
+                                <h4 class="build-text">分面智能控制</h4>
+                                <table class="facet-ITC-form">
+                                    <tbody>
+                                    <tr>
+                                        <td class="facet-direction">东</td>
+                                        <td>
+                                            <div class="facet-ITC-btn">
+                                                <p>关闭</p>
+                                                <p>开启</p>
+                                                <span class="facet-btn"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="facet-direction">西</td>
+                                        <td>
+                                            <div class="facet-ITC-btn">
+                                                <p>关闭</p>
+                                                <p>开启</p>
+                                                <span class="facet-btn"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="facet-direction">南</td>
+                                        <td>
+                                            <div class="facet-ITC-btn">
+                                                <p>关闭</p>
+                                                <p>开启</p>
+                                                <span class="facet-btn"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="facet-direction">北</td>
+                                        <td>
+                                            <div class="facet-ITC-btn">
+                                                <p>关闭</p>
+                                                <p>开启</p>
+                                                <span class="facet-btn"></span>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--设备故障信息栏-->
+                        <div class="ctr-right-bottom clear">
+                            设备故障信息：<span id="fault-msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--1楼-->
+                <div class="floorI type1" id="i1" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-4m">4m-</p>
+                                    <p class="tall-18">1.8m-</p>
+                                    <p class="tall-12">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地4m</button>
+                                <button type="button" class="build-btn ld1-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld1-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--2楼-->
+                <div class="floorI type1" id="i2" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-4m">4m-</p>
+                                    <p class="tall-18">1.8m-</p>
+                                    <p class="tall-12">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地4m</button>
+                                <button type="button" class="build-btn ld1-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld1-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+
+                        </div>
+                        <!--设备故障信息栏-->
+
+                    </div>
+                </div>
+                <!--3楼-->
+                <div class="floorI type1" id="i3" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-2-2">2.2m-</p>
+                                    <p class="tall-18-2">1.8m-</p>
+                                    <p class="tall-12-2">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地2.2m</button>
+                                <button type="button" class="build-btn ld01-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld01-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--4楼-->
+                <div class="floorI type1" id="i4" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-2-2">2.2m-</p>
+                                    <p class="tall-18-2">1.8m-</p>
+                                    <p class="tall-12-2">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地2.2m</button>
+                                <button type="button" class="build-btn ld01-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld01-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--5楼-->
+                <div class="floorI type1" id="i5" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-2-2">2.2m-</p>
+                                    <p class="tall-18-2">1.8m-</p>
+                                    <p class="tall-12-2">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地2.2m</button>
+                                <button type="button" class="build-btn ld01-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld01-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--6楼-->
+                <div class="floorI type1" id="i6" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-2-2">2.2m-</p>
+                                    <p class="tall-18-2">1.8m-</p>
+                                    <p class="tall-12-2">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地2.2m</button>
+                                <button type="button" class="build-btn ld01-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld01-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--7楼-->
+                <div class="floorI type1" id="i7" style="display:none">
+                    <div class="control-right left">
+                        <!--楼层控制面板-->
+                        <div class="ctr-right-top">
+                            <div class="ctr-1F-2F left">
+                                <div class="height-mark left">
+                                    <p>升起卷帘-</p>
+                                    <p class="tall-2-2">2.2m-</p>
+                                    <p class="tall-18-2">1.8m-</p>
+                                    <p class="tall-12-2">1.2m-</p>
+                                    <p class="lower-shutter">降下卷帘-</p>
+                                </div>
+                                <ul class="slide left">
+                                    <li>
+                                        <span>东</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>西</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>南</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>北</span>
+                                        <div class="slide-module">
+                                            <div class="slide-ball"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ctr-3F-7F left">
+                                <div class="facet-ITC">
+                                    <h4 class="build-text">分面智能控制</h4>
+                                    <table class="facet-ITC-form">
+                                        <tbody>
+                                        <tr>
+                                            <td class="facet-direction">东</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">西</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">南</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facet-direction">北</td>
+                                            <td>
+                                                <div class="facet-ITC-btn">
+                                                    <p>关闭</p>
+                                                    <p>开启</p>
+                                                    <span class="facet-btn"></span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--控制按钮-->
+                        <div class="ctr-right-middle clear">
+                            <div class="building-ctr">
+                                <h4 class="build-text">整层控制</h4>
+                                <button type="button" class="build-btn build-btn-space qs">全升</button>
+                                <button class="build-btn tz" type="button">停止</button>
+                                <button type="button" class="build-btn qj">全降</button>
+                            </div>
+                            <div class="building-sun">
+                                <h4 class="build-text">整层遮阳</h4>
+                                <button type="button" class="build-btn ld2-2">离地2.2m</button>
+                                <button type="button" class="build-btn ld01-8">离地1.8m</button>
+                                <button type="button" class="build-btn ld01-2">离地1.2m</button>
+                            </div>
+                            <div class="building-ITC">
+                                <h4 class="build-text">整层智能控制</h4>
+                                <button type="button" class="build-btn btn-space">启动</button>
+                                <button type="button" class="build-btn btn-close">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/device-control.js"></script>
+<script src="js/nav.js"></script>
+
+</html>

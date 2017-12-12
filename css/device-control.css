@@ -1,0 +1,590 @@
+body{
+   min-width: 1280px;
+}
+
+/*设备控制内容*/
+.device-content{/*改*/
+    width:1280px;
+    margin:0 auto;
+    /*margin-top:160px;*/
+    overflow:hidden;
+}
+/*楼层选择*/
+.stories{
+    width:220px;
+    min-height:733px;
+    /*margin-top:-60px;*//*改*/
+}
+.stories ul{
+    width:100%;
+    height:100%;
+    overflow:auto;
+    padding-top:20px;/*改*/
+    background: #FFFFFF;
+}
+.stories ul li{
+    width:100%;
+    height:168px;
+    text-align:center;
+    cursor:pointer;
+}
+.stories ul li>span{
+    display:block;
+    width:105px;
+    height:105px;
+    background: url(../img/1f.png) no-repeat;
+    background-size:100% 100%;
+    margin:0 auto 10px auto;
+    cursor:pointer;
+}
+.stories ul li.stories-2>span{
+    background: url(../img/2f.png) no-repeat;
+}
+.stories ul li.stories-3>span{
+    background: url(../img/3f.png) no-repeat;
+}
+.stories ul li.stories-4>span{
+    background: url(../img/4f.png) no-repeat;
+}
+.stories ul li.stories-5>span{
+    background: url(../img/5f.png) no-repeat;
+}
+.stories ul li.stories-6>span{
+    background: url(../img/6f.png) no-repeat;
+}
+.stories ul li.stories-7>span{
+    background: url(../img/7f.png) no-repeat;
+}
+.stories ul li.stories-8>span{
+    width:109px;
+    height:89px;
+    background: url(../img/building.png) no-repeat;
+}
+.stories ul li>p{
+    height:33px;
+    line-height:33px;
+    font-size: 24px;
+    color: #474850;
+    letter-spacing: 5.07px;
+}
+/*控制详情*/
+.control-detail{/*改*/
+    /*margin-left:220px;*/
+    margin-top:45px;
+    margin-left:30px;
+}
+.control-detail>div{
+    width:1026px;
+    overflow:hidden;
+    margin:0 auto;
+}
+/*左边部分*/
+.control-left{
+    width:208px;
+    margin-right:70px;
+}
+
+
+/*选择楼层图片*/
+.ctr-left-top{
+    width:184px;
+    height:182px;
+    position:relative;
+    text-align:center;
+    margin: auto;
+}
+.ctr-left-top>img{
+    margin-top:20px;
+}
+.ctr-left-top>p{
+    height:35px;
+    line-height:35px;
+    font-size:18px;
+    color:#474850;
+    margin-top:10px;
+}
+
+
+/*左边中间*/
+.ctr-left-middle{
+    width:184px;
+    height:182px;
+    background-color:#f8f7f7;
+    border:1px solid #ebebeb;
+    margin: auto;
+}
+.ctr-left-middle ul{
+    width:100%;
+    height:100%;
+    padding-top:19px;
+}
+.ctr-left-middle ul li{
+    width:100%;
+    height:20px;
+    line-height:20px;
+    padding-left:13px;
+    margin-bottom:13px;
+    font-size: 14px;
+    color: #000;
+}
+.ctr-left-middle li>div.justify{
+    float:left;
+    display:inline;
+    text-align:justify;
+    width:60px;
+    height:100%
+}
+.ctr-left-middle li>div.justify>span{
+    display:inline-block;
+    padding-left:100%;
+}
+.ctr-left-middle li.weather-title{
+    margin-bottom:26px;
+}
+
+
+/*左边底部*/
+.ctr-left-bottom{
+    margin-top:49px;
+    padding-left:3px;
+    position:relative;
+    width:100%;
+    height:230px;
+}
+.ctr-left-bottom>div{
+    width:200px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.ctr-left-bottom p{
+    font-size:10px;
+    color:#60626c;
+    height:27px;
+    line-height:27px;
+    width:100%;
+    margin-bottom:7px;
+}
+.ctr-left-bottom p>span{
+    font-size:13px;
+    color:#000;
+}
+/*iframe*/
+.floorI{
+    width:748px;
+    height:705px;
+    border:none;
+    float:left;
+}
+
+/*iframe*/
+
+/*右边部分*/
+.control-right{
+    width:748px;
+    height:100%;
+    overflow:hidden;
+}
+/*右边顶部*/
+.ctr-right-top{
+    width:100%;
+    overflow:hidden;
+}
+.type0 .ctr-right-top>div{
+    width:360px;
+    height:342px;
+    background-color:#d8d8d8;
+    border-radius:13px;
+    margin-right:14px;
+    padding-top:16px;
+}
+/*+*/
+.type1 .ctr-right-top>div{
+    padding-top:40px;
+    width:450px;
+    height:370px;
+    background-color:#d8d8d8;
+    border-radius:13px;
+    margin-right:14px;
+}
+/*+*/
+/*1F-2F*/
+.floor{
+    padding-left:29px;
+    font-size: 16px;
+    color: #000;
+}
+/*卷帘高度说明*/
+.height-mark{
+    width:68px;
+    height:210px;
+    margin-top:65px;
+    margin-left:15px;
+    padding-right:9px;
+    position:relative;
+}
+.height-mark>p{
+    font-size: 10px;
+    color: #9A9B9C;
+    text-align:right;
+    height:14px;
+    line-height:14px;
+}
+.tall-4m{
+    margin-top:59px;
+}
+.tall-18{
+     margin-top:55px;
+}
+.tall-18-2{
+    margin-top:10px;
+}
+.tall-12{
+    margin-top:8px;
+}
+.tall-12-2{
+    margin-top:20px;
+}
+.tall-22{
+    margin-top:62px;
+}
+/*+*/
+.tall-2-2{
+    margin-top:62px;
+}
+/*+*/
+.lower-shutter{
+    position:absolute;
+    bottom:0px;
+    right:9px;
+}
+/*滑动控制*/
+.slide{
+    margin-top:23px;
+}
+.type0 .slide li {
+    float:left;
+    width:32px;
+    text-align:center;
+    margin-right:35px;
+}
+.type1 .slide li {
+    float:left;
+    width:32px;
+    text-align:center;
+    margin-left:25px;
+    margin-right:30px;
+}
+.type0 .slide li>span{
+    font-size: 20px;
+    color: #000;
+}
+.type1 .slide li>span{
+    font-size: 20px;
+    color: #000;
+    position: relative;
+    top:-10px;
+}
+.slide-module{
+    position:relative;
+    margin:0 auto;
+    margin-top:16px;
+    width:14px;
+    height:210px;
+    background:url(../img/scroll-bar.png) no-repeat;
+}
+.slide-ball{
+    width:32px;
+    height:32px;
+    background:url(../img/slide-ball.png) no-repeat;
+    position:absolute;
+    bottom:0px;
+    left:-9px;
+    cursor:pointer;
+}
+
+/*右边中间*/
+.ctr-right-middle{
+    margin-top:16px;
+    width:100%;
+    overflow:hidden;
+}
+.ctr-right-middle>div{
+   float:left;
+    background-color:#d8d8d8;
+    border-radius:13px;
+    border:1px solid #d0cfcf;
+}
+.type0 .building-ctr,.building-sun,.building-ITC,.facet-ITC{
+    width:158px;
+    height:268px;
+    margin-right:12px;
+    padding-top:14px;
+}
+.type1 .building-ctr,.type1 .building-sun,.type1 .building-ITC{
+    width:226px;
+    height:268px;
+    margin-right:21px;
+    padding-top:14px;
+}
+.facet-ITC{
+    width:220px;
+}
+.type1 .facet-ITC{
+    width:250px;
+    margin-right:21px;
+    padding-top:14px;
+}
+.build-text{
+    font-size: 16px;
+    color: #000;
+    margin-left:24px;
+    margin-bottom:35px;
+}
+.type1 .build-text{
+    font-size: 16px;
+    color: #000;
+    margin-left:24px;
+    margin-bottom:31px;
+}
+.type1 .facet-ITC .build-text{
+    margin-bottom: 17px;
+}
+.build-btn{
+    display:block;
+    width:133px;
+    height:48px;
+    line-height:48px;
+    background:url(../img/button1.png) no-repeat;
+    margin:0 auto;
+    margin-bottom:6px;
+    text-align:center;
+    font-size: 14px;
+    color: #5F9BD0;
+}
+.type1 .build-btn{
+    display:block;
+    width:133px;
+    height:48px;
+    line-height:48px;
+    background:url(../img/button1.png) no-repeat;
+    margin:0 auto;
+    margin-bottom:12px;
+    text-align:center;
+    font-size: 14px;
+    color: #5F9BD0;
+}
+.type1 .control-right .ctr-right-middle .building-ITC .btn-active{
+    background:url(../img/btn-start-active2.png) no-repeat;
+    color:#fff;
+}
+.building-ctr>.build-btn:hover,.building-sun>.build-btn:hover{
+    background:url(../img/button1-click.png) no-repeat;
+}
+.btn-space{
+    margin-bottom:60px;
+}
+.building-ITC>.btn-space:hover{
+    background:url(../img/button1-click.png) no-repeat;
+}
+.ctr-right-middle .building-ITC .btn-active{
+    background:url(../img/btn-start-active2.png) no-repeat;
+    color:#fff;
+}
+.btn-close{
+    background:url(../img/button-closepng) no-repeat;
+    color: #fff;
+}
+.type1 .btn-close{
+    background:url(../img/button-closepng) no-repeat;
+    color: #fff;
+    margin-top:70px;
+}
+.btn-close:hover{
+    background:url(../img/button-close-hover.png) no-repeat;
+}
+/*分面智能控制*/
+
+.facet-ITC-form{
+    width:90%;
+    margin:0 auto;
+}
+.facet-ITC-form td{
+    height:45px;
+    line-height:45px;
+    text-align:center;
+    vertical-align: middle;
+}
+.type1 .facet-ITC-form td{
+    height:60px;
+    line-height:60px;
+    text-align:center;
+    vertical-align: middle;
+}
+.facet-ITC-form>tbody>tr>td:nth-child(1){
+    width:50px;
+    color: #56575E;
+}
+.facet-ITC-form>tbody>tr>td:nth-child(2)>div{
+    width:136px;
+    height:40px;
+    line-height:40px;
+    background-image: linear-gradient(-180deg, #474850 3%, #64656B 100%);
+    border-radius: 100px;
+    position: relative;
+}
+/*开启状态背景*/
+.facet-ITC-form>tbody>tr>td:nth-child(2)>div.facet-btn-start{
+    background-image: linear-gradient(-180deg, #E2BD8B 0%, #F5E4C9 48%, #E7C598 100%);
+}
+.facet-ITC-form>tbody>tr>td:nth-child(2)>div>p:nth-child(1){
+    float:left;
+    margin-left:24px;
+    color: #B9B7B7;
+}
+.facet-ITC-form>tbody>tr>td:nth-child(2)>div>p:nth-child(2){
+    float:right;
+    margin-right:24px;
+    color: #AF6A0F;
+}
+.facet-ITC-form>tbody>tr>td:nth-child(2)>div>span{
+    position: absolute;
+    top:-2px;
+    right:-5px;
+    width:76px;
+    height:48px;
+    background:url(../img/toggle-btn.png) no-repeat center;
+    cursor:pointer;
+}
+/*开启状态*/
+.facet-ITC-form>tbody>tr>td:nth-child(2)>div>span.toggle-status-start{
+    position: absolute;
+    top:-2px;
+    left:-5px;
+}
+
+
+/*设备故障信息*/
+.ctr-right-bottom{
+    width:730px;
+    height:65px;
+    background: #E1C5A0;
+    margin-top:14px;
+    padding:10px 16px;
+    font-size: 16px;
+    color: #000;
+    overflow:auto;
+}
+
+
+
+
+/*单楼层控制面板*/
+.type1 .ctr-right-top>div.ctr-3F-7F{
+    width:250px;
+}
+/*查看楼层平面图按钮-*/
+.control-left>button{
+    width:166px;
+    height:48px;
+    line-height:48px;
+    background:url(../img/floor-plan.png) no-repeat;
+    font-size: 16px;
+    color: #fff;
+    margin-top:30px;
+}
+
+
+
+
+
+
+
+/*查看楼层平面图按钮-*/
+.control-left>button{
+    width:166px;
+    height:48px;
+    line-height:48px;
+    background:url(../img/floor-plan.png) no-repeat;
+    font-size: 16px;
+    color: #fff;
+    margin-top:15px;
+}
+.control-left>button:hover{
+    background:url(../img/floor-plan-hover.png) no-repeat;
+}
+/*楼层平面图弹出框*/
+.floor-plan-popbox{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:100000000000000;
+    background:rgba(0,0,0,.5);
+    display:none;
+}
+.floor-plan-popbox>div{
+    width:1218px;
+    height:657px;
+    background: #fff;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.22);
+    border-radius: 8px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.floor-plan-popbox>div>img{
+    width:1200px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+/*平面图关闭按钮*/
+.floor-plan-popbox-close{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:21px;
+    height:21px;
+    background:url(../img/subpop-close.png) no-repeat;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
